@@ -1,17 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" x-data="{menuIsOpen: false}" :class="{noscroll:menuIsOpen}">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test menu</title>
+    <script defer src="https://unpkg.com/alpinejs"></script>
+    <style>
+      body {
+        font-family: "Roboto", "sans-serif";
+        font-size: 16px;
+      }
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #fff;
+        display: grid;
+        place-content: center;
+      }
+      .header_menuBtn {
+        position: relative;
+        z-index: 10;
+      }
+      .noscroll,
+      .noscroll body {
+        overflow: hidden;
+      }
+      dd {
+        color: tomato;
+      }
+    </style>
   </head>
   <body>
     <!-- https://emmet.io/ -->
     <!-- header>h1{Test de menu} -->
     <header>
+      <button 
+        aria-controls="mainNav" 
+        @click="menuIsOpen = ! menuIsOpen"
+        class="header_menuBtn"
+        >
+        Menu
+      </button>
       <h1>Test de menu</h1>
+      <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
+        <ul>
+          <li><a href="#">item 1</a></li>
+          <li><a href="#">item 2</a></li>
+          <li><a href="#">item 3</a></li>
+        </ul>
+      </nav>
     </header>
+    <section>
+      <dl x-data="{ddLoremIsShow: false}">
+        <dt @click="ddLoremIsShow = ! ddLoremIsShow">Lorem.</dt>
+        <dd x-show="ddLoremIsShow" x-transition.duration.300ms>Lorem ipsum dolor sit amet.</dd>
+      </dl>
+      <dl x-data="{ddPossimusIsShow: false}">
+        <dt @click="ddPossimusIsShow = ! ddPossimusIsShow">Possimus.</dt>
+        <dd x-show="ddPossimusIsShow" x-transition.duration.300ms>Alias maxime dolores consequatur ea?</dd>
+      </dl>
+      <dl x-data="{ddLaudantiumIsShow: false}">
+        <dt @click="ddLaudantiumIsShow = ! ddLaudantiumIsShow">Laudantium!</dt>
+        <dd x-show="ddLaudantiumIsShow" x-transition.duration.300ms>Sapiente labore in recusandae sint?</dd>
+      </dl>
+    </section>
     <!-- h2>lorem2^p>lorem -->
     <h2>Lorem, ipsum.</h2>
     <p>
