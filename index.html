@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test menu</title>
     <script defer src="https://unpkg.com/alpinejs"></script>
+    <!-- Style CSS index.html -->
     <style>
       body {
         font-family: "Roboto", "sans-serif";
@@ -42,8 +43,8 @@
   </head>
   <body>
     <!-- https://emmet.io/ -->
-    <!-- header>h1{Test de menu} -->
     <header>
+    <!-- Bouton menu avec changement de valeur pour menuIsOpen -->
       <button 
         aria-controls="mainNav" 
         @click="menuIsOpen = ! menuIsOpen"
@@ -52,6 +53,7 @@
         Menu
       </button>
       <h1>Test de menu</h1>
+      <!-- Menu avec une animation lors du changement de x - show -->
       <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
         <ul>
           <li><a href="#">item 1</a></li>
@@ -61,6 +63,8 @@
       </nav>
     </header>
     <section>
+      <!--Accordéon fonctionnel et chacune des parties sont indépendantes-->
+      <!--Chaque éléments a une animation-->
       <dl x-data="{ddLoremIsShow: false}">
         <dt @click="ddLoremIsShow = ! ddLoremIsShow">Lorem.</dt>
         <dd x-show="ddLoremIsShow" x-transition.duration.300ms>Lorem ipsum dolor sit amet.</dd>
