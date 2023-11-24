@@ -1,3 +1,4 @@
 - nom : Charasse
 - prénom : Samuel
 - URL publique du site : https://menualpinejssamuelcharasse.netlify.app/
+- URL DNS INFOMANIAK : menualpinejs.scharasse.fr
