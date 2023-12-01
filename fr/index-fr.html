@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test menu</title>
     <script defer src="https://unpkg.com/alpinejs"></script>
+    <link rel="alternate" hreflang="fr" href="/fr/index-fr.html" />
     <!-- Style CSS index.html -->
     <style>
       body {
@@ -56,10 +57,34 @@
       <!-- Menu avec une animation lors du changement de x - show -->
       <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
         <ul>
-          <li><img src="/public/icones/cat.svg" alt="cat icon"><a href="/en/cats/index.html" onclick="document.cookie=`nf_lang=en;path=/;SameSite=Strict`">Cats home</a></li>
           <li><img src="/public/icones/cat.svg" alt="cat icon"><a href="/fr/chats/index.html" onclick="document.cookie=`nf_lang=fr;path=/;SameSite=Strict`">Accueil des chats</a></li>
+          <li><img src="/public/icones/dog.svg" alt="idog icon"><a href="/fr/chiens/index.html" onclick="document.cookie=`nf_lang=fr;path=/;SameSite=Strict`">Accueil des chiens</a></li>
         </ul>
       </nav>
     </header>
+    <section>
+      <!--Accordéon fonctionnel et chacune des parties sont indépendantes-->
+      <!--Chaque éléments a une animation-->
+      <dl x-data="{ddLoremIsShow: false}">
+        <dt @click="ddLoremIsShow = ! ddLoremIsShow">Lorem.</dt>
+        <dd x-show="ddLoremIsShow" x-transition.duration.300ms>Lorem ipsum dolor sit amet.</dd>
+      </dl>
+      <dl x-data="{ddPossimusIsShow: false}">
+        <dt @click="ddPossimusIsShow = ! ddPossimusIsShow">Possimus.</dt>
+        <dd x-show="ddPossimusIsShow" x-transition.duration.300ms>Alias maxime dolores consequatur ea?</dd>
+      </dl>
+      <dl x-data="{ddLaudantiumIsShow: false}">
+        <dt @click="ddLaudantiumIsShow = ! ddLaudantiumIsShow">Laudantium!</dt>
+        <dd x-show="ddLaudantiumIsShow" x-transition.duration.300ms>Sapiente labore in recusandae sint?</dd>
+      </dl>
+    </section>
+    <!-- h2>lorem2^p>lorem -->
+    <h2>Lorem, ipsum.</h2>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat
+      mollitia adipisci alias error laboriosam numquam incidunt magni eum eos
+      nemo aliquid pariatur quam voluptates animi laudantium, aperiam
+      consectetur nobis enim.
+    </p>
   </body>
 </html>
