@@ -56,10 +56,10 @@
       <!-- Menu avec une animation lors du changement de x - show -->
       <nav id="mainNav" x-show="menuIsOpen" x-transition.duration.800ms class="menu">
         <ul>
-          <li><img src="/public/icones/cat.svg" alt="cat icon"><a href="/en/cats/index.html">Cats home</a></li>
-          <li><img src="/public/icones/dog.svg" alt="idog icon"><a href="/en/dogs/index.html">Dogs home</a></li>
-          <li><img src="/public/icones/cat.svg" alt="cat icon"><a href="/fr/chats/index.html">Accueil des chats</a></li>
-          <li><img src="/public/icones/dog.svg" alt="idog icon"><a href="/fr/chiens/index.html">Accueil des chiens</a></li>
+          <li><img src="/public/icones/cat.svg" alt="cat icon"><a href="/en/cats/index.html" onclick="document.cookie=`nf_lang=en;path=/;SameSite=Strict`">Cats home</a></li>
+          <li><img src="/public/icones/dog.svg" alt="idog icon"><a href="/en/dogs/index.html" onclick="document.cookie=`nf_lang=en;path=/;SameSite=Strict`">Dogs home</a></li>
+          <li><img src="/public/icones/cat.svg" alt="cat icon"><a href="/fr/chats/index.html" onclick="document.cookie=`nf_lang=fr;path=/;SameSite=Strict`">Accueil des chats</a></li>
+          <li><img src="/public/icones/dog.svg" alt="idog icon"><a href="/fr/chiens/index.html" onclick="document.cookie=`nf_lang=fr;path=/;SameSite=Strict`">Accueil des chiens</a></li>
         </ul>
       </nav>
     </header>
